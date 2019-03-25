@@ -4,7 +4,7 @@
     "4catalyzer-react",
     "4catalyzer-jest",
     "prettier",
-    "prettier-react",
+    "prettier/react",
     "4catalyzer-typescript"
   ],
   "env": {
