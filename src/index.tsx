@@ -27,6 +27,7 @@ export type Mutate<T extends OperationBase> = (
 export function useMutation<T extends OperationBase>(
   mutation: BaseMutationConfig<T>['mutation'],
   userConfig: MutationConfig<T> = {},
+  /** if not provided, the context environment will be used. */
   environment?: Environment,
 ): [Mutate<T>, MutationState<T>] {
   const [state, setState] = useState<MutationState<T>>({
@@ -71,12 +72,28 @@ export function useMutation<T extends OperationBase>(
       });
 
       return new Promise((resolve, reject) => {
+        function handleError(error: any) {
+          setState({
+            loading: false,
+            data: null,
+            error,
+          });
+
+          if (!mergedConfig.onError) {
+            reject(error);
+          } else {
+            mergedConfig.onError(error);
+          }
+        }
         commitMutation(resolvedEnvironment, {
           ...mergedConfig,
           mutation,
           variables: mergedConfig.variables!,
           onCompleted: (response, error) => {
-            invariant(!error, 'mutation unexpectedly completed with error');
+            if (error) {
+              handleError(error);
+              return;
+            }
 
             setState({
               loading: false,
@@ -84,25 +101,12 @@ export function useMutation<T extends OperationBase>(
               error: null,
             });
 
+            resolve(response);
             if (mergedConfig.onCompleted) {
               mergedConfig.onCompleted(response, undefined);
-            } else {
-              resolve(response);
             }
           },
-          onError: error => {
-            setState({
-              loading: false,
-              data: null,
-              error,
-            });
-
-            if (!mergedConfig.onError) {
-              reject(error);
-            } else {
-              mergedConfig.onError(error);
-            }
-          },
+          onError: handleError,
         });
       });
     },
@@ -126,6 +130,7 @@ export function useMutation<T extends OperationBase>(
 export type MutationProps<T extends OperationBase> = MutationConfig<T> & {
   children: (mutate: Mutate<T>, state: MutationState<T>) => React.ReactNode;
   mutation: BaseMutationConfig<T>['mutation'];
+  /** if not provided, the context environment will be used. */
   environment?: Environment;
 };
 
