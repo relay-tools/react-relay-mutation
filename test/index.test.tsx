@@ -1,0 +1,168 @@
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import React from 'react';
+import { graphql } from 'react-relay';
+import { Environment } from 'relay-runtime';
+import sinon from 'sinon';
+
+import { Mutation, useMutation } from '../src';
+import { createEnvironment, timeout } from './helpers';
+import { testIndexMutation } from './__generated__/testIndexMutation.graphql';
+
+Enzyme.configure({ adapter: new Adapter() });
+
+let environment: Environment;
+
+beforeEach(() => {
+  environment = createEnvironment();
+});
+
+const mutation = graphql`
+  mutation testIndexMutation($input: DoStuffInput!) {
+    doStuff(input: $input) {
+      result
+    }
+  }
+`;
+
+describe('render prop', () => {
+  it('should fire onCompleted', async () => {
+    const renderedStates: any[] = [];
+    const onCompleted = sinon.spy();
+    const onError = sinon.spy();
+
+    const element = shallow(
+      <Mutation<testIndexMutation>
+        mutation={mutation}
+        environment={environment}
+        variables={{ input: { name: 'Mr. Foo' } }}
+        onCompleted={onCompleted}
+        onError={onError}
+      >
+        {(mutate, mutationState) => {
+          renderedStates.push(mutationState);
+          return (
+            <button type="button" onClick={() => mutate()}>
+              click
+            </button>
+          );
+        }}
+      </Mutation>,
+    );
+
+    element.find('button').simulate('click');
+
+    await timeout(10);
+
+    expect(onCompleted.args).toMatchSnapshot('onCompleted');
+    expect(onError.args).toMatchSnapshot('onError');
+    expect(renderedStates).toMatchSnapshot('state');
+  });
+
+  it('should fire onError', async () => {
+    const onCompleted = sinon.spy();
+    const onError = sinon.spy();
+    const renderedStates: any[] = [];
+
+    const element = shallow(
+      <Mutation<testIndexMutation>
+        mutation={mutation}
+        environment={environment}
+        variables={{ wrongInput: 1 } as any}
+        onCompleted={onCompleted}
+        onError={onError}
+      >
+        {(mutate, mutationState) => {
+          renderedStates.push(mutationState);
+          return (
+            <button type="button" onClick={() => mutate()}>
+              click
+            </button>
+          );
+        }}
+      </Mutation>,
+    );
+
+    element.find('button').simulate('click');
+
+    await timeout(10);
+
+    expect(onCompleted.args).toMatchSnapshot('onCompleted');
+    expect(onError.args).toMatchSnapshot('onError');
+    expect(renderedStates).toMatchSnapshot('state');
+  });
+});
+
+describe('hook', () => {
+  it('should work', async () => {
+    const onCompleted = sinon.spy();
+    const onError = sinon.spy();
+    const renderedStates: any[] = [];
+
+    const Component = () => {
+      const [mutate, mutationState] = useMutation<testIndexMutation>(
+        mutation,
+        { onCompleted, onError },
+        environment,
+      );
+      renderedStates.push(mutationState);
+
+      return (
+        <button
+          type="button"
+          onClick={() =>
+            mutate({
+              variables: { input: { name: 'Mr. Bar' } },
+            })
+          }
+        >
+          click me
+        </button>
+      );
+    };
+
+    const element = shallow(<Component />);
+
+    element.find('button').simulate('click');
+
+    await timeout(10);
+
+    expect(onCompleted.args).toMatchSnapshot('onCompleted');
+    expect(onError.args).toMatchSnapshot('onError');
+    expect(renderedStates).toMatchSnapshot('state');
+  });
+
+  it('should succeed with promises', async () => {
+    let called = false;
+
+    const Component = () => {
+      const [mutate] = useMutation<testIndexMutation>(
+        mutation,
+        {},
+        environment,
+      );
+
+      return (
+        <button
+          type="button"
+          onClick={async () => {
+            await mutate({
+              variables: { input: { name: 'Mr. Bar' } },
+            });
+            called = true;
+          }}
+        >
+          click me
+        </button>
+      );
+    };
+
+    const element = shallow(<Component />);
+
+    element.find('button').simulate('click');
+
+    await timeout(10);
+
+    expect(called).toBe(true);
+  });
+});

@@ -1,7 +1,11 @@
 import invariant from 'invariant';
 import React, { useCallback, useContext, useState } from 'react';
 import { ReactRelayContext, commitMutation } from 'react-relay';
-import { MutationConfig, OperationBase } from 'relay-runtime';
+import {
+  MutationConfig as BaseMutationConfig,
+  Environment,
+  OperationBase,
+} from 'relay-runtime';
 
 import { Omit, WithOptionalFields } from './typeHelpers';
 
@@ -11,16 +15,19 @@ export type MutationState<T extends OperationBase> = {
   error?: Error | null;
 };
 
+type MutationConfig<T extends OperationBase> = WithOptionalFields<
+  Omit<BaseMutationConfig<T>, 'mutation'>,
+  'variables'
+>;
+
 export type Mutate<T extends OperationBase> = (
   config?: Partial<MutationConfig<T>>,
 ) => void;
 
-type MutationConfigWithOptionalVariables<
-  T extends OperationBase
-> = WithOptionalFields<MutationConfig<T>, 'variables'>;
-
 export function useMutation<T extends OperationBase>(
-  userConfig: MutationConfigWithOptionalVariables<T>,
+  mutation: BaseMutationConfig<T>['mutation'],
+  userConfig: MutationConfig<T> = {},
+  environment?: Environment,
 ): [Mutate<T>, MutationState<T>] {
   const [state, setState] = useState<MutationState<T>>({
     loading: false,
@@ -28,10 +35,10 @@ export function useMutation<T extends OperationBase>(
     error: null,
   });
 
-  const { environment } = useContext(ReactRelayContext);
+  const relayContext = useContext(ReactRelayContext);
+  const resolvedEnvironment = environment || relayContext.environment;
   const {
     configs,
-    mutation,
     variables,
     uploadables,
     onCompleted,
@@ -42,10 +49,9 @@ export function useMutation<T extends OperationBase>(
   } = userConfig;
 
   const mutate = useCallback(
-    (config?: Partial<Omit<MutationConfig<T>, 'mutation'>>) => {
+    (config?: Partial<MutationConfig<T>>) => {
       const mergedConfig = {
         configs,
-        mutation,
         variables,
         uploadables,
         onCompleted,
@@ -65,8 +71,9 @@ export function useMutation<T extends OperationBase>(
       });
 
       return new Promise((resolve, reject) => {
-        commitMutation(environment, {
+        commitMutation(resolvedEnvironment, {
           ...mergedConfig,
+          mutation,
           variables: mergedConfig.variables!,
           onCompleted: (response, error) => {
             invariant(!error, 'mutation unexpectedly completed with error');
@@ -100,7 +107,7 @@ export function useMutation<T extends OperationBase>(
       });
     },
     [
-      environment,
+      resolvedEnvironment,
       configs,
       mutation,
       variables,
@@ -116,16 +123,18 @@ export function useMutation<T extends OperationBase>(
   return [mutate, state];
 }
 
-export type MutationProps<
-  T extends OperationBase
-> = MutationConfigWithOptionalVariables<T> & {
+export type MutationProps<T extends OperationBase> = MutationConfig<T> & {
   children: (mutate: Mutate<T>, state: MutationState<T>) => React.ReactNode;
+  mutation: BaseMutationConfig<T>['mutation'];
+  environment?: Environment;
 };
 
-export default function Mutation<T extends OperationBase>({
+export function Mutation<T extends OperationBase>({
   children,
-  ...rest
+  mutation,
+  environment,
+  ...config
 }: MutationProps<T>) {
-  const [mutate, state] = useMutation(rest);
+  const [mutate, state] = useMutation(mutation, config, environment);
   return children(mutate, state) as React.ReactElement<any>;
 }
