@@ -1,0 +1,17 @@
+input DoStuffInput {
+  name: String!
+  clientMutationId: String
+}
+
+type DoStuffPayload {
+  result: String
+  clientMutationId: String
+}
+
+type Mutation {
+  doStuff(input: DoStuffInput!): DoStuffPayload
+}
+
+type Query {
+  dummy: ID
+}

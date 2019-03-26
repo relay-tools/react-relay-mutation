@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hook should work: onCompleted 1`] = `
+Array [
+  Array [
+    Object {
+      "doStuff": Object {
+        "result": "you did it Mr. Bar",
+      },
+    },
+    undefined,
+  ],
+]
+`;
+
+exports[`hook should work: onError 1`] = `Array []`;
+
+exports[`hook should work: state 1`] = `
+Array [
+  Object {
+    "data": null,
+    "error": null,
+    "loading": false,
+  },
+  Object {
+    "data": null,
+    "error": null,
+    "loading": true,
+  },
+  Object {
+    "data": Object {
+      "doStuff": Object {
+        "result": "you did it Mr. Bar",
+      },
+    },
+    "error": null,
+    "loading": false,
+  },
+]
+`;
+
+exports[`render prop should fire onCompleted: onCompleted 1`] = `
+Array [
+  Array [
+    Object {
+      "doStuff": Object {
+        "result": "you did it Mr. Foo",
+      },
+    },
+    undefined,
+  ],
+]
+`;
+
+exports[`render prop should fire onCompleted: onError 1`] = `Array []`;
+
+exports[`render prop should fire onCompleted: state 1`] = `
+Array [
+  Object {
+    "data": null,
+    "error": null,
+    "loading": false,
+  },
+  Object {
+    "data": null,
+    "error": null,
+    "loading": true,
+  },
+  Object {
+    "data": Object {
+      "doStuff": Object {
+        "result": "you did it Mr. Foo",
+      },
+    },
+    "error": null,
+    "loading": false,
+  },
+]
+`;
+
+exports[`render prop should fire onError: onCompleted 1`] = `Array []`;
+
+exports[`render prop should fire onError: onError 1`] = `
+Array [
+  Array [
+    [Error: Variable "$input" of non-null type "DoStuffInput!" must not be null.
+
+GraphQL request (2:3)
+1: mutation testIndexMutation(
+2:   $input: DoStuffInput!
+     ^
+3: ) {
+],
+  ],
+]
+`;
+
+exports[`render prop should fire onError: state 1`] = `
+Array [
+  Object {
+    "data": null,
+    "error": null,
+    "loading": false,
+  },
+  Object {
+    "data": null,
+    "error": null,
+    "loading": true,
+  },
+  Object {
+    "data": null,
+    "error": [Error: Variable "$input" of non-null type "DoStuffInput!" must not be null.
+
+GraphQL request (2:3)
+1: mutation testIndexMutation(
+2:   $input: DoStuffInput!
+     ^
+3: ) {
+],
+    "loading": false,
+  },
+]
+`;

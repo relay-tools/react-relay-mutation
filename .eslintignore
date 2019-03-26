@@ -1,0 +1,9 @@
+**/__generated__/
+**/coverage/**
+**/es/**
+**/lib/**
+**/fixtures/**
+**/flow-typed/**
+**/node_modules/**
+**/CHANGELOG.md
+**/package.json

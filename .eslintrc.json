@@ -1,0 +1,16 @@
+{
+  "plugins": ["prettier"],
+  "extends": [
+    "4catalyzer-react",
+    "4catalyzer-jest",
+    "prettier",
+    "prettier/react",
+    "4catalyzer-typescript"
+  ],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
