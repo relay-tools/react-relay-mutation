@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`hook should fail with promises 1`] = `
+[Error: Variable "$input" of non-null type "DoStuffInput!" must not be null.
+
+GraphQL request (2:3)
+1: mutation testIndexMutation(
+2:   $input: DoStuffInput!
+     ^
+3: ) {
+]
+`;
+
+exports[`hook should succeed with promises 1`] = `
+Object {
+  "doStuff": Object {
+    "result": "you did it Mr. Bar",
+  },
+}
+`;
+
 exports[`hook should work: onCompleted 1`] = `
 Array [
   Array [

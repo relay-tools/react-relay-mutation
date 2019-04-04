@@ -23,7 +23,7 @@
     "relay-compiler": "relay-compiler --watchman false --src test --schema test/fixtures/schema.graphql --language typescript --extensions js ts tsx",
     "release": "rollout",
     "tdd": "jest --watch",
-    "test": "yarn lint && yarn build:fixtures && jest",
+    "test": "yarn build:fixtures && yarn lint && jest",
     "testonly": "jest",
     "typecheck": "tsc --noEmit && tsc --noEmit -p test",
     "update-schema": "ts-node --skip-project test/fixtures/updateSchema.ts"

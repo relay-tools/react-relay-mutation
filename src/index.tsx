@@ -22,7 +22,7 @@ type MutationConfig<T extends OperationBase> = WithOptionalFields<
 
 export type Mutate<T extends OperationBase> = (
   config?: Partial<MutationConfig<T>>,
-) => void;
+) => Promise<T['response']>;
 
 export function useMutation<T extends OperationBase>(
   mutation: BaseMutationConfig<T>['mutation'],

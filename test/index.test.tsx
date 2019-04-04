@@ -146,10 +146,49 @@ describe('hook', () => {
         <button
           type="button"
           onClick={async () => {
-            await mutate({
+            const result = await mutate({
               variables: { input: { name: 'Mr. Bar' } },
             });
+            expect(result).toMatchSnapshot();
             called = true;
+          }}
+        >
+          click me
+        </button>
+      );
+    };
+
+    const element = shallow(<Component />);
+
+    element.find('button').simulate('click');
+
+    await timeout(10);
+
+    expect(called).toBe(true);
+  });
+
+  it('should fail with promises', async () => {
+    let called = false;
+
+    const Component = () => {
+      const [mutate] = useMutation<testIndexMutation>(
+        mutation,
+        {},
+        environment,
+      );
+
+      return (
+        <button
+          type="button"
+          onClick={async () => {
+            try {
+              await mutate({
+                variables: { wrongInput: 1 } as any,
+              });
+            } catch (e) {
+              expect(e).toMatchSnapshot();
+              called = true;
+            }
           }}
         >
           click me
