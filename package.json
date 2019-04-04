@@ -1,6 +1,6 @@
 {
   "name": "graphql-relay-mutation",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "main": "lib/index.js",
   "module": "es/index.js",
   "repository": {
