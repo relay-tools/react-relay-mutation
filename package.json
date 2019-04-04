@@ -1,11 +1,11 @@
 {
-  "name": "graphql-relay-mutation",
+  "name": "react-relay-mutation",
   "version": "0.1.0",
   "main": "lib/index.js",
   "module": "es/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/4Catalyzer/graphql-relay-mutation.git"
+    "url": "https://github.com/relay-tools/react-relay-mutation.git"
   },
   "author": "4Catalyzer",
   "license": "MIT",
