@@ -145,5 +145,5 @@ export function Mutation<T extends OperationBase>({
   ...config
 }: MutationProps<T>) {
   const [mutate, state] = useMutation(mutation, config, environment);
-  return children(mutate, state) as React.ReactElement<any>;
+  return children(mutate, state) as React.ReactElement;
 }
