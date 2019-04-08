@@ -15,7 +15,11 @@ export type MutationState<T extends OperationBase> = {
   error?: Error | null;
 };
 
-type MutationConfig<T extends OperationBase> = WithOptionalFields<
+export type MutationNode<T extends OperationBase> = BaseMutationConfig<
+  T
+>['mutation'];
+
+export type MutationConfig<T extends OperationBase> = WithOptionalFields<
   Omit<BaseMutationConfig<T>, 'mutation'>,
   'variables'
 >;
@@ -25,7 +29,7 @@ export type Mutate<T extends OperationBase> = (
 ) => Promise<T['response']>;
 
 export function useMutation<T extends OperationBase>(
-  mutation: BaseMutationConfig<T>['mutation'],
+  mutation: MutationNode<T>,
   userConfig: MutationConfig<T> = {},
   /** if not provided, the context environment will be used. */
   environment?: Environment,
@@ -129,7 +133,7 @@ export function useMutation<T extends OperationBase>(
 
 export type MutationProps<T extends OperationBase> = MutationConfig<T> & {
   children: (mutate: Mutate<T>, state: MutationState<T>) => React.ReactNode;
-  mutation: BaseMutationConfig<T>['mutation'];
+  mutation: MutationNode<T>;
   /** if not provided, the context environment will be used. */
   environment?: Environment;
 };
