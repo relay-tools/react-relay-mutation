@@ -83,12 +83,14 @@ export function useMutation<T extends OperationBase>(
             error,
           });
 
-          if (!mergedConfig.onError) {
-            reject(error);
-          } else {
+          if (mergedConfig.onError) {
             mergedConfig.onError(error);
+            resolve(undefined);
+          } else {
+            reject(error);
           }
         }
+
         commitMutation(resolvedEnvironment, {
           ...mergedConfig,
           mutation,
@@ -105,10 +107,10 @@ export function useMutation<T extends OperationBase>(
               error: null,
             });
 
-            resolve(response);
             if (mergedConfig.onCompleted) {
-              mergedConfig.onCompleted(response, undefined);
+              mergedConfig.onCompleted(response, null);
             }
+            resolve(response);
           },
           onError: handleError,
         });
