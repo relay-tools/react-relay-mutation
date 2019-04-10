@@ -42,6 +42,7 @@ export function useMutation<T extends OperationBase>(
 
   const relayContext = useContext(ReactRelayContext);
   const resolvedEnvironment = environment || relayContext.environment;
+
   const {
     configs,
     variables,
@@ -56,6 +57,7 @@ export function useMutation<T extends OperationBase>(
   const mutate = useCallback(
     (config?: Partial<MutationConfig<T>>) => {
       const mergedConfig = {
+        ...config,
         configs,
         variables,
         uploadables,
@@ -64,7 +66,6 @@ export function useMutation<T extends OperationBase>(
         optimisticUpdater,
         optimisticResponse,
         updater,
-        ...config,
       };
 
       invariant(mergedConfig.variables, 'you must specify variables');
@@ -115,9 +116,9 @@ export function useMutation<T extends OperationBase>(
       });
     },
     [
+      mutation,
       resolvedEnvironment,
       configs,
-      mutation,
       variables,
       uploadables,
       onCompleted,
