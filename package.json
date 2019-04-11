@@ -83,7 +83,7 @@
     "@types/node": "^11.11.6",
     "@types/react-dom": "^16.8.3",
     "@types/sinon": "^7.0.10",
-    "@typescript-eslint/eslint-plugin": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-relay": "^3.0.0",
     "enzyme": "^3.9.0",
