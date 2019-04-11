@@ -204,4 +204,41 @@ describe('hook', () => {
 
     expect(called).toBe(true);
   });
+
+  it('should resolve promise on error when onError is set', async () => {
+    let called = false;
+
+    const Component = () => {
+      const [mutate] = useMutation<testIndexMutation>(
+        mutation,
+        {
+          onError: () => {},
+        },
+        environment,
+      );
+
+      return (
+        <button
+          type="button"
+          onClick={async () => {
+            const result = await mutate({
+              variables: { wrongInput: 1 } as any,
+            });
+            expect(result).toMatchSnapshot();
+            called = true;
+          }}
+        >
+          click me
+        </button>
+      );
+    };
+
+    const element = shallow(<Component />);
+
+    element.find('button').simulate('click');
+
+    await timeout(10);
+
+    expect(called).toBe(true);
+  });
 });

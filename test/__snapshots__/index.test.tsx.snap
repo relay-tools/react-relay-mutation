@@ -11,6 +11,8 @@ GraphQL request (2:3)
 ]
 `;
 
+exports[`hook should resolve promise on error when onError is set 1`] = `undefined`;
+
 exports[`hook should succeed with promises 1`] = `
 Object {
   "doStuff": Object {
