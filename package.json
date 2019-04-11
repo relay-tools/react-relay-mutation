@@ -113,7 +113,7 @@
     "relay-local-schema": "^0.8.0",
     "sinon": "^7.3.0",
     "ts-node": "^8.0.3",
-    "typescript": "^3.2.2"
+    "typescript": "^3.4.3"
   },
   "peerDependencies": {
     "react": "^16.8.5",
