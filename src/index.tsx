@@ -108,7 +108,7 @@ export function useMutation<T extends OperationBase>(
             });
 
             if (mergedConfig.onCompleted) {
-              mergedConfig.onCompleted(response, null);
+              mergedConfig.onCompleted(response, error);
             }
             resolve(response);
           },
