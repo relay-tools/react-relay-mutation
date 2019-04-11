@@ -1,6 +1,7 @@
 {
   "name": "react-relay-mutation",
   "version": "0.1.2",
+  "description": "Higher-level React mutation API for Relay",
   "main": "lib/index.js",
   "module": "es/index.js",
   "repository": {
