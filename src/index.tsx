@@ -85,7 +85,7 @@ export function useMutation<T extends OperationBase>(
 
           if (mergedConfig.onError) {
             mergedConfig.onError(error);
-            resolve(undefined);
+            resolve();
           } else {
             reject(error);
           }
