@@ -81,7 +81,7 @@ function MyComponentWithComponent({ myValue }) {
 }
 ```
 
-The `useMutation` hook and the `<Mutation>` component take a mutation node and optionally any mutation options valid for `commitMutation` in Relay. The `useMutation` hook takes the mutation as its first argument, and the optional configuration object as its second argument. The `<Mutation>` component takes the mutation node as the `mutation` prop, and any other options as props by name. In both cases, `variables` is optional.
+The `useMutation` hook and the `<Mutation>` component take a mutation node and optionally any mutation options valid for `commitMutation` in Relay, except that `onCompleted` only takes a single argument for the response, as errors there will be handled identically to request errors. The `useMutation` hook takes the mutation as its first argument, and the optional configuration object as its second argument. The `<Mutation>` component takes the mutation node as the `mutation` prop, and any other options as props by name. In both cases, `variables` is optional.
 
 Both `useMutation` and `<Mutation>` provide a tuple of a `mutate` callback and a `mutationState` object. This is the return value for `useMutation` and the argument passed into the function child for `<Mutation>`.
 

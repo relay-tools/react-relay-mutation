@@ -29,7 +29,6 @@ Array [
         "result": "you did it Mr. Bar",
       },
     },
-    null,
   ],
 ]
 `;
@@ -68,7 +67,6 @@ Array [
         "result": "you did it Mr. Foo",
       },
     },
-    null,
   ],
 ]
 `;

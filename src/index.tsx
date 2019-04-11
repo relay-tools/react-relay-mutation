@@ -7,7 +7,7 @@ import {
   OperationBase,
 } from 'relay-runtime';
 
-import { Omit, WithOptionalFields } from './typeHelpers';
+import { Omit } from './typeHelpers';
 
 export type MutationState<T extends OperationBase> = {
   loading: boolean;
@@ -19,10 +19,11 @@ export type MutationNode<T extends OperationBase> = BaseMutationConfig<
   T
 >['mutation'];
 
-export type MutationConfig<T extends OperationBase> = WithOptionalFields<
-  Omit<BaseMutationConfig<T>, 'mutation'>,
-  'variables'
->;
+export type MutationConfig<T extends OperationBase> = Partial<
+  Omit<BaseMutationConfig<T>, 'mutation' | 'onCompleted'>
+> & {
+  onCompleted?(response: T['response']): void;
+};
 
 export type Mutate<T extends OperationBase> = (
   config?: Partial<MutationConfig<T>>,
@@ -95,9 +96,10 @@ export function useMutation<T extends OperationBase>(
           ...mergedConfig,
           mutation,
           variables: mergedConfig.variables!,
-          onCompleted: (response, error) => {
-            if (error) {
-              handleError(error);
+          onCompleted: (response, errors) => {
+            if (errors) {
+              // FIXME: This isn't right. onError expects a single error.
+              handleError(errors);
               return;
             }
 
@@ -108,7 +110,7 @@ export function useMutation<T extends OperationBase>(
             });
 
             if (mergedConfig.onCompleted) {
-              mergedConfig.onCompleted(response, error);
+              mergedConfig.onCompleted(response);
             }
             resolve(response);
           },
