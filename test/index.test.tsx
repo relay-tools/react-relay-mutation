@@ -3,7 +3,6 @@ import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import { graphql } from 'react-relay';
 import { Environment } from 'relay-runtime';
-import sinon from 'sinon';
 
 import { Mutation, useMutation } from '../src';
 import { createEnvironment, timeout } from './helpers';
@@ -28,8 +27,8 @@ const mutation = graphql`
 describe('render prop', () => {
   it('should fire onCompleted', async () => {
     const renderedStates: any[] = [];
-    const onCompleted = sinon.spy();
-    const onError = sinon.spy();
+    const onCompleted = jest.fn();
+    const onError = jest.fn();
 
     const element = shallow(
       <Mutation<testIndexMutation>
@@ -54,14 +53,14 @@ describe('render prop', () => {
 
     await timeout(10);
 
-    expect(onCompleted.args).toMatchSnapshot('onCompleted');
-    expect(onError.args).toMatchSnapshot('onError');
+    expect(onCompleted.mock.calls).toMatchSnapshot('onCompleted');
+    expect(onError.mock.calls).toMatchSnapshot('onError');
     expect(renderedStates).toMatchSnapshot('state');
   });
 
   it('should fire onError', async () => {
-    const onCompleted = sinon.spy();
-    const onError = sinon.spy();
+    const onCompleted = jest.fn();
+    const onError = jest.fn();
     const renderedStates: any[] = [];
 
     const element = shallow(
@@ -87,16 +86,16 @@ describe('render prop', () => {
 
     await timeout(10);
 
-    expect(onCompleted.args).toMatchSnapshot('onCompleted');
-    expect(onError.args).toMatchSnapshot('onError');
+    expect(onCompleted.mock.calls).toMatchSnapshot('onCompleted');
+    expect(onError.mock.calls).toMatchSnapshot('onError');
     expect(renderedStates).toMatchSnapshot('state');
   });
 });
 
 describe('hook', () => {
   it('should work', async () => {
-    const onCompleted = sinon.spy();
-    const onError = sinon.spy();
+    const onCompleted = jest.fn();
+    const onError = jest.fn();
     const renderedStates: any[] = [];
 
     const Component = () => {
@@ -127,8 +126,8 @@ describe('hook', () => {
 
     await timeout(10);
 
-    expect(onCompleted.args).toMatchSnapshot('onCompleted');
-    expect(onError.args).toMatchSnapshot('onError');
+    expect(onCompleted.mock.calls).toMatchSnapshot('onCompleted');
+    expect(onError.mock.calls).toMatchSnapshot('onError');
     expect(renderedStates).toMatchSnapshot('state');
   });
 

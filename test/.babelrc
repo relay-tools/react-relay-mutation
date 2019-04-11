@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["@4c", {
+      "useBuiltIns": "usage"
+    }],
+    "@babel/typescript"
+  ],
+  "plugins": [
+    "relay"
+  ]
+}

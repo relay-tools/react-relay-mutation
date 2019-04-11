@@ -1,16 +1,13 @@
 module.exports = api => ({
   presets: [
     [
-      "@4c",
+      '@4c',
       {
-        target: "web",
-        modules: api.env() === "esm" ? false : "commonjs"
-      }
+        target: 'web',
+        targets: {},
+        modules: api.env() === 'esm' ? false : 'commonjs',
+      },
     ],
-    "@babel/preset-typescript"
+    '@babel/typescript',
   ],
-  "plugins": [
-    "@babel/plugin-transform-runtime",
-    "relay"
-  ]
 });
