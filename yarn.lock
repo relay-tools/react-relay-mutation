@@ -6415,9 +6415,9 @@ regjsparser@^0.6.0:
     jsesc "~0.5.0"
 
 relay-compiler-language-typescript@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/relay-compiler-language-typescript/-/relay-compiler-language-typescript-2.0.0.tgz#87e53f023170923d0941022f91a09ffad0ed7b14"
-  integrity sha512-azUH4LE4vVHHFdCPwZ+6no0oUqczUuuZ+Z5VyKhJDx1/rlwFYz0iQLo9unECW2Bh+nhva41yzqnAY3rtZ4iPcg==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/relay-compiler-language-typescript/-/relay-compiler-language-typescript-2.1.0.tgz#69cde41ab5a80a2457c99afe511f815049656901"
+  integrity sha512-1JkbbeuRag5J4IKTJxx6pV8kQbxzhEzchMOqBFnwmYoi/rjYmY0T/LkbM8hJzcyG7dhicROl3yQ+SmmQHMPlEA==
   dependencies:
     immutable "^3.8.2"
     invariant "^2.2.2"
