@@ -2834,9 +2834,9 @@ eslint-config-4catalyzer-react@^0.9.3:
     eslint-plugin-react-hooks "^1.5.1"
 
 eslint-config-4catalyzer-typescript@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-typescript/-/eslint-config-4catalyzer-typescript-0.12.1.tgz#2d2f98da3d031792046ac4039cced429b9ab636d"
-  integrity sha512-Gcd2WBOMaxV2Ke6g+QiQ++UCP/+QbHb0FpPCuS2k1QTgSXzSdjAhqlTUJqoXnWQNH1RvuEw2mD7j7PKNrV/qgw==
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-typescript/-/eslint-config-4catalyzer-typescript-0.12.2.tgz#f2f914a98c4fc9f282800feb8512bcc022e8c7c9"
+  integrity sha512-mcbkrsTVzuTZwMpiIdzNX+d+8uULTaejwvZs5g4pCwW/ZTGw86ck5qSBuDN/8egCDpo4SEAc5AQ2FE8l2Oj9rQ==
   dependencies:
     "@typescript-eslint/parser" "^1.4.2"
     babel-eslint "^10.0.1"
