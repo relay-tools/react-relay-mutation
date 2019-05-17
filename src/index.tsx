@@ -6,6 +6,7 @@ import {
   Environment,
   OperationBase,
 } from 'relay-runtime';
+import useMounted from '@restart/hooks/useMounted';
 
 import { Omit } from './typeHelpers';
 
@@ -40,6 +41,8 @@ export function useMutation<T extends OperationBase>(
     data: null,
     error: null,
   });
+
+  const isMounted = useMounted();
 
   const relayContext = useContext(ReactRelayContext);
   const resolvedEnvironment = environment || relayContext.environment;
@@ -78,11 +81,13 @@ export function useMutation<T extends OperationBase>(
 
       return new Promise((resolve, reject) => {
         function handleError(error: any) {
-          setState({
-            loading: false,
-            data: null,
-            error,
-          });
+          if (isMounted()) {
+            setState({
+              loading: false,
+              data: null,
+              error,
+            });
+          }
 
           if (mergedConfig.onError) {
             mergedConfig.onError(error);
@@ -103,11 +108,13 @@ export function useMutation<T extends OperationBase>(
               return;
             }
 
-            setState({
-              loading: false,
-              data: response,
-              error: null,
-            });
+            if (isMounted()) {
+              setState({
+                loading: false,
+                data: response,
+                error: null,
+              });
+            }
 
             if (mergedConfig.onCompleted) {
               mergedConfig.onCompleted(response);
@@ -129,6 +136,7 @@ export function useMutation<T extends OperationBase>(
       optimisticUpdater,
       optimisticResponse,
       updater,
+      isMounted,
     ],
   );
 
