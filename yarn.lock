@@ -1097,10 +1097,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@restart/hooks@^0.2.13":
-  version "0.2.13"
-  resolved "https://registry.yarnpkg.com/@restart/hooks/-/hooks-0.2.13.tgz#de9a2dfd6dacac3b60f9b19614cdd49f90e434c3"
-  integrity sha512-riuYub4Xx/Pk+YUPRHZPwJd2+rAJSsRd4Pqkqvhzu+AbkDdNi4y+kYEQicnAofbfTA5apRPm3cK9sWc6Gj5DNg==
+"@restart/hooks@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@restart/hooks/-/hooks-0.3.0.tgz#176a73e703133230e613cca4e536265657099bb5"
+  integrity sha512-meqDR+pO53h6Aq1Fk/I1U9uF0pj4tugZb3PWWwYFwKGtr7fPwgyxxkkdddSo1zhL/VDAUxwqFKB3wuP2Z1txjg==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
