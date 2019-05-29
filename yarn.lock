@@ -6053,7 +6053,7 @@ prop-types-exact@^1.2.0:
     object.assign "^4.1.0"
     reflect.ownkeys "^0.2.0"
 
-prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -6155,16 +6155,15 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-relay@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-3.0.0.tgz#b3fe7931f812a6700e2420a853adb74156e162b9"
-  integrity sha512-HZQ1CXhF2EBt6f5XG2nWoT5FZIn9zdoHeo8+u5rqQ3fCRBr4qmvLihfehWlCcYCcx57pnAiqsjUdJmwxGUmbsg==
+react-relay@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-4.0.0.tgz#000f63ca3ae179b4415ee11765d04bc2fe4278da"
+  integrity sha512-Z7O+zM5oUmUWqOiPv7Z3L8a9cNCXare8wkUfDgtTBl048wXXtkAWTHTP0QZdViRSLmNHmEwHo/y0lBpZ7iy6SQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
     nullthrows "^1.1.0"
-    prop-types "^15.5.8"
-    relay-runtime "3.0.0"
+    relay-runtime "4.0.0"
 
 react-test-renderer@^16.0.0-0:
   version "16.8.6"
@@ -6431,7 +6430,7 @@ relay-runtime@3.0.0:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
 
-relay-runtime@^4.0.0:
+relay-runtime@4.0.0, relay-runtime@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-4.0.0.tgz#5cf50f52e3ea56ec81f0b5fed05b03e99a9e3906"
   integrity sha512-Fd5nAMNfySINAYPf1zgtcYbCk33pO5ANiYfaMhKYzukfc2GCmn6RP7NEpG69GxVezu/E1aOxo72t+Y1NspDV8A==
