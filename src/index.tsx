@@ -7,6 +7,7 @@ import {
   OperationBase,
 } from 'relay-runtime';
 import useMounted from '@restart/hooks/useMounted';
+import useUpdatedRef from '@restart/hooks/useUpdatedRef';
 
 import { Omit } from './typeHelpers';
 
@@ -43,31 +44,15 @@ export function useMutation<T extends OperationBase>(
   });
 
   const isMounted = useMounted();
+  const userConfigRef = useUpdatedRef(userConfig);
 
   const relayContext = useContext(ReactRelayContext);
   const resolvedEnvironment = environment || relayContext.environment;
-  const {
-    configs,
-    variables,
-    uploadables,
-    onCompleted,
-    onError,
-    optimisticUpdater,
-    optimisticResponse,
-    updater,
-  } = userConfig;
 
   const mutate = useCallback(
     (config?: Partial<MutationConfig<T>>) => {
-      const mergedConfig = {
-        configs,
-        variables,
-        uploadables,
-        onCompleted,
-        onError,
-        optimisticUpdater,
-        optimisticResponse,
-        updater,
+      const mergedConfig: MutationConfig<T> = {
+        ...userConfigRef.current,
         ...config,
       };
 
@@ -125,19 +110,7 @@ export function useMutation<T extends OperationBase>(
         });
       });
     },
-    [
-      resolvedEnvironment,
-      configs,
-      mutation,
-      variables,
-      uploadables,
-      onCompleted,
-      onError,
-      optimisticUpdater,
-      optimisticResponse,
-      updater,
-      isMounted,
-    ],
+    [userConfigRef, resolvedEnvironment, mutation, isMounted],
   );
 
   return [mutate, state];
