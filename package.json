@@ -124,6 +124,6 @@
     "relay-local-schema": "^0.8.0",
     "relay-runtime": "^4.0.0",
     "ts-node": "^8.0.3",
-    "typescript": "^3.4.3"
+    "typescript": "^3.5.1"
   }
 }
