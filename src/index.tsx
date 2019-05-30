@@ -8,8 +8,6 @@ import {
 } from 'relay-runtime';
 import useMounted from '@restart/hooks/useMounted';
 
-import { Omit } from './typeHelpers';
-
 export type MutationState<T extends OperationBase> = {
   loading: boolean;
   data: T['response'] | null;
@@ -57,8 +55,8 @@ export function useMutation<T extends OperationBase>(
     updater,
   } = userConfig;
 
-  const mutate = useCallback(
-    (config?: Partial<MutationConfig<T>>) => {
+  const mutate: Mutate<T> = useCallback(
+    config => {
       const mergedConfig = {
         configs,
         variables,
