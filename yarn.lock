@@ -1691,10 +1691,10 @@ babel-plugin-react-intl@^3.0.1:
     intl-messageformat-parser "^1.2.0"
     mkdirp "^0.5.1"
 
-babel-plugin-relay@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-relay/-/babel-plugin-relay-3.0.0.tgz#dc5b66c94c8565f2e52edf8fbe86aadff6e7966d"
-  integrity sha512-lI+PR4/H8XytNVUtz8cYYM7sR2unFMeTsBbnKFvuU/mnxxmDO3JA7OHxtTdctLjlRSYrcCVmvIEL2JDehMxlTg==
+babel-plugin-relay@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-relay/-/babel-plugin-relay-5.0.0.tgz#e8ab872a33af7e950c446c961207faebb0408763"
+  integrity sha512-IkrocTTmq+QjesIBqwJjSVZfKsonxIGHmuXPkKgIt/gVVZbwLZV7UVXq6aZdmmEc49TG+5LtzlxGAwlQDjGgNQ==
   dependencies:
     babel-plugin-macros "^2.0.0"
 
