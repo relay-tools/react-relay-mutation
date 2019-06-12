@@ -114,7 +114,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@^7.1.0", "@babel/core@^7.2.2", "@babel/core@^7.4.0", "@babel/core@^7.4.3":
+"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.2.2", "@babel/core@^7.4.0", "@babel/core@^7.4.3":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.4.5.tgz#081f97e8ffca65a9b4b0fdc7e274e703f000c06a"
   integrity sha512-OvjIh6aqXtlsA8ujtGKfC7LYWksYSX8yQcM8Ay3LuvVeQ63lcOKgoZWVqcpFwkd29aYU9rVx7jxhfhiEDV9MZA==
@@ -6390,11 +6390,12 @@ relay-compiler-language-typescript@^2.0.0:
     immutable "^3.8.2"
     invariant "^2.2.2"
 
-relay-compiler@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-3.0.0.tgz#689015f2aa638296c82c5761e5b4cdb09aed7139"
-  integrity sha512-wCD1FV4IKCfeNZdNrdeRjAWl23C3hcInmBbR+rOE/w345+IoXwh1W4o152opRfwHMqPIC5YjyrWh2O73vJYGLw==
+relay-compiler@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-5.0.0.tgz#ca2514bda20ff829550ac87f126d07a1517bf6de"
+  integrity sha512-q8gKlPRTJe/TwtIokbdXehy1SxDFIyLBZdsfg60J4OcqyviIx++Vhc+h4lXzBY8LsBVaJjTuolftYcXJLhlE6g==
   dependencies:
+    "@babel/core" "^7.0.0"
     "@babel/generator" "^7.0.0"
     "@babel/parser" "^7.0.0"
     "@babel/polyfill" "^7.0.0"
@@ -6408,7 +6409,7 @@ relay-compiler@^3.0.0:
     fbjs "^1.0.0"
     immutable "~3.7.6"
     nullthrows "^1.1.0"
-    relay-runtime "3.0.0"
+    relay-runtime "5.0.0"
     signedsource "^1.0.0"
     yargs "^9.0.0"
 
@@ -6421,6 +6422,14 @@ relay-runtime@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-3.0.0.tgz#a024e1d80c9a71e76495f3a15e8f3f40113385e2"
   integrity sha512-P9pDoAaqku9m5MTMjampwo+0vsNd2Nv8x78GpWuxPxvqJusqz8MBpu0RVBViIpLzCn77Pegw2ihtXgQSBdvs0w==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    fbjs "^1.0.0"
+
+relay-runtime@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-5.0.0.tgz#7c688ee621d6106a2cd9f3a3706eb6d717c7f660"
+  integrity sha512-lrC2CwfpWWHBAN608eENAt5Bc5zqXXE2O9HSo8tc6Gy5TxfK+fU+x9jdwXQ2mXxVPgANYtYeKzU5UTfcX0aDEw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
