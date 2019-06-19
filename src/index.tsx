@@ -4,31 +4,31 @@ import { ReactRelayContext, commitMutation } from 'react-relay';
 import {
   MutationConfig as BaseMutationConfig,
   Environment,
-  OperationBase,
+  OperationType,
 } from 'relay-runtime';
 import useMounted from '@restart/hooks/useMounted';
 
-export type MutationState<T extends OperationBase> = {
+export type MutationState<T extends OperationType> = {
   loading: boolean;
   data: T['response'] | null;
   error?: Error | null;
 };
 
-export type MutationNode<T extends OperationBase> = BaseMutationConfig<
+export type MutationNode<T extends OperationType> = BaseMutationConfig<
   T
 >['mutation'];
 
-export type MutationConfig<T extends OperationBase> = Partial<
+export type MutationConfig<T extends OperationType> = Partial<
   Omit<BaseMutationConfig<T>, 'mutation' | 'onCompleted'>
 > & {
   onCompleted?(response: T['response']): void;
 };
 
-export type Mutate<T extends OperationBase> = (
+export type Mutate<T extends OperationType> = (
   config?: Partial<MutationConfig<T>>,
 ) => Promise<T['response']>;
 
-export function useMutation<T extends OperationBase>(
+export function useMutation<T extends OperationType>(
   mutation: MutationNode<T>,
   userConfig: MutationConfig<T> = {},
   /** if not provided, the context environment will be used. */
@@ -43,7 +43,7 @@ export function useMutation<T extends OperationBase>(
   const isMounted = useMounted();
 
   const relayContext = useContext(ReactRelayContext);
-  const resolvedEnvironment = environment || relayContext.environment;
+  const resolvedEnvironment = environment || relayContext!.environment;
   const {
     configs,
     variables,
@@ -141,14 +141,14 @@ export function useMutation<T extends OperationBase>(
   return [mutate, state];
 }
 
-export type MutationProps<T extends OperationBase> = MutationConfig<T> & {
+export type MutationProps<T extends OperationType> = MutationConfig<T> & {
   children: (mutate: Mutate<T>, state: MutationState<T>) => React.ReactNode;
   mutation: MutationNode<T>;
   /** if not provided, the context environment will be used. */
   environment?: Environment;
 };
 
-export function Mutation<T extends OperationBase>({
+export function Mutation<T extends OperationType>({
   children,
   mutation,
   environment,
