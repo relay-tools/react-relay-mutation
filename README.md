@@ -9,6 +9,7 @@ This package provides a `useMutation` Hook and a `<Mutation>` component. These w
 ```js
 import React from 'react';
 import { Mutation, useMutation } from 'react-relay-mutation';
+import { environment } from './environment';
 
 /* ... */
 
@@ -26,6 +27,7 @@ function MyComponentWithHook({ myValue }) {
         window.alert(`received ${myMutation.value}`);
       },
     },
+    environment, // Not required when provided with ReactRelayContext
   );
 
   return loading ? (
@@ -78,6 +80,22 @@ function MyComponentWithComponent({ myValue }) {
       }
     </Mutation>
   );
+}
+```
+
+**Providing the environment with `ReactRelayContext`**
+
+```js
+import { ReactRelayContext } from "react-relay";
+import environment from "./environment";
+
+function App() {
+  const contextValue = { environment, variables: {} }
+  return (
+    <ReactRelayContext.Provider value={contextValue}/>
+      <ComponentWithMutation/>
+    </ReactRelayContext.Provider>
+  )
 }
 ```
 
