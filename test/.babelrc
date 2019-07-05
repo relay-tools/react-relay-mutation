@@ -1,7 +1,7 @@
 {
   "presets": [
     ["@4c", {
-      "useBuiltIns": "usage"
+      "target": "node"
     }],
     "@babel/typescript"
   ],
