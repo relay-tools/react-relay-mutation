@@ -9,7 +9,6 @@ This package provides a `useMutation` Hook and a `<Mutation>` component. These w
 ```js
 import React from 'react';
 import { Mutation, useMutation } from 'react-relay-mutation';
-import { environment } from './environment';
 
 /* ... */
 
@@ -27,7 +26,6 @@ function MyComponentWithHook({ myValue }) {
         window.alert(`received ${myMutation.value}`);
       },
     },
-    environment, // Not required when provided with ReactRelayContext
   );
 
   return loading ? (
@@ -83,22 +81,6 @@ function MyComponentWithComponent({ myValue }) {
 }
 ```
 
-**Providing the environment with `ReactRelayContext`**
-
-```js
-import { ReactRelayContext } from "react-relay";
-import environment from "./environment";
-
-function App() {
-  const contextValue = { environment, variables: {} }
-  return (
-    <ReactRelayContext.Provider value={contextValue}/>
-      <ComponentWithMutation/>
-    </ReactRelayContext.Provider>
-  )
-}
-```
-
 The `useMutation` hook and the `<Mutation>` component take a mutation node and optionally any mutation options valid for `commitMutation` in Relay, except that `onCompleted` only takes a single argument for the response, as errors there will be handled identically to request errors. The `useMutation` hook takes the mutation as its first argument, and the optional configuration object as its second argument. The `<Mutation>` component takes the mutation node as the `mutation` prop, and any other options as props by name. In both cases, `variables` is optional.
 
 Both `useMutation` and `<Mutation>` provide a tuple of a `mutate` callback and a `mutationState` object. This is the return value for `useMutation` and the argument passed into the function child for `<Mutation>`.
@@ -110,6 +92,37 @@ The `mutationState` object has the following properties:
 - `loading`: a boolean indicating whether the mutation is currently pending
 - `data`: the response data for the mutation
 - `error`: any errors returned by the mutation
+
+### Specifying the Relay environment
+
+By default, `useMutation` and `<Mutation>` take the Relay environment from React context. This context is automatically provided by `<QueryRenderer>` and by many integrations that replace `<QueryRenderer>`, such as Found Relay.
+
+If you do not already have the Relay environment in context, you can provide the environment manually:
+
+```js
+import { ReactRelayContext } from 'react-relay';
+
+/* ... */
+
+function MyAppWithRelayEnvironment() {
+  return (
+    <ReactRelayContext.Provider
+      value={{
+        environment,
+        variables: {},
+      }}
+    >
+      <MyApp />
+    </ReactRelayContext.Provider>
+  );
+}
+```
+
+You can also pass in the environment in the configuration object:
+
+```js
+const [mutate] = useMutation(mutation, { environment });
+```
 
 ## Acknowledgements
 
