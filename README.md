@@ -93,6 +93,37 @@ The `mutationState` object has the following properties:
 - `data`: the response data for the mutation
 - `error`: any errors returned by the mutation
 
+### Specifying the Relay environment
+
+By default, `useMutation` and `<Mutation>` take the Relay environment from React context. This context is automatically provided by `<QueryRenderer>` and by many integrations that replace `<QueryRenderer>`, such as Found Relay.
+
+If you do not already have the Relay environment in context, you can provide the environment manually:
+
+```js
+import { ReactRelayContext } from 'react-relay';
+
+/* ... */
+
+function MyAppWithRelayEnvironment() {
+  return (
+    <ReactRelayContext.Provider
+      value={{
+        environment,
+        variables: {},
+      }}
+    >
+      <MyApp />
+    </ReactRelayContext.Provider>
+  );
+}
+```
+
+You can also pass in the environment in the configuration object:
+
+```js
+const [mutate] = useMutation(mutation, { environment });
+```
+
 ## Acknowledgements
 
 This library closely follows the mutation API in [React Apollo](https://www.apollographql.com/docs/react/).
