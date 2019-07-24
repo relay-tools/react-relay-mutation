@@ -8,33 +8,33 @@ import {
 } from 'relay-runtime';
 import useMounted from '@restart/hooks/useMounted';
 
-export type MutationState<T extends OperationType> = {
+export type MutationState<TOperation extends OperationType> = {
   loading: boolean;
-  data: T['response'] | null;
-  error?: Error | null;
+  data: TOperation['response'] | null;
+  error: Error | null;
 };
 
-export type MutationNode<T extends OperationType> = BaseMutationConfig<
-  T
->['mutation'];
+export type MutationNode<
+  TOperation extends OperationType
+> = BaseMutationConfig<TOperation>['mutation'];
 
-export type MutationConfig<T extends OperationType> = Partial<
-  Omit<BaseMutationConfig<T>, 'mutation' | 'onCompleted'>
+export type MutationConfig<TOperation extends OperationType> = Partial<
+  Omit<BaseMutationConfig<TOperation>, 'mutation' | 'onCompleted'>
 > & {
-  onCompleted?(response: T['response']): void;
+  onCompleted?(response: TOperation['response']): void;
 };
 
-export type Mutate<T extends OperationType> = (
-  config?: Partial<MutationConfig<T>>,
-) => Promise<T['response']>;
+export type Mutate<TOperation extends OperationType> = (
+  config?: Partial<MutationConfig<TOperation>>,
+) => Promise<TOperation['response']>;
 
-export function useMutation<T extends OperationType>(
-  mutation: MutationNode<T>,
-  userConfig: MutationConfig<T> = {},
+export function useMutation<TOperation extends OperationType>(
+  mutation: MutationNode<TOperation>,
+  userConfig: MutationConfig<TOperation> = {},
   /** if not provided, the context environment will be used. */
   environment?: Environment,
-): [Mutate<T>, MutationState<T>] {
-  const [state, setState] = useState<MutationState<T>>({
+): [Mutate<TOperation>, MutationState<TOperation>] {
+  const [state, setState] = useState<MutationState<TOperation>>({
     loading: false,
     data: null,
     error: null,
@@ -55,7 +55,7 @@ export function useMutation<T extends OperationType>(
     updater,
   } = userConfig;
 
-  const mutate: Mutate<T> = useCallback(
+  const mutate: Mutate<TOperation> = useCallback(
     config => {
       const mergedConfig = {
         configs,
@@ -141,19 +141,24 @@ export function useMutation<T extends OperationType>(
   return [mutate, state];
 }
 
-export type MutationProps<T extends OperationType> = MutationConfig<T> & {
-  children: (mutate: Mutate<T>, state: MutationState<T>) => React.ReactNode;
-  mutation: MutationNode<T>;
+export type MutationProps<TOperation extends OperationType> = MutationConfig<
+  TOperation
+> & {
+  children: (
+    mutate: Mutate<TOperation>,
+    state: MutationState<TOperation>,
+  ) => React.ReactNode;
+  mutation: MutationNode<TOperation>;
   /** if not provided, the context environment will be used. */
   environment?: Environment;
 };
 
-export function Mutation<T extends OperationType>({
+export function Mutation<TOperation extends OperationType>({
   children,
   mutation,
   environment,
   ...config
-}: MutationProps<T>) {
+}: MutationProps<TOperation>) {
   const [mutate, state] = useMutation(mutation, config, environment);
   return children(mutate, state) as React.ReactElement;
 }
