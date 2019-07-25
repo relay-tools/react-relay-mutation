@@ -1293,9 +1293,9 @@
     csstype "^2.2.0"
 
 "@types/relay-runtime@*", "@types/relay-runtime@^5.0.0":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-5.0.2.tgz#e0302476582905d469c79b68a8bbc35d75a0da8b"
-  integrity sha512-nB9WvIHEMvvZQDGL+zXjiakuCkG0oRUio0p3ILtu2BzNmUnOAzrkzeqfWPrROIZwRpSRDe2ph2VhiBzuBpIRlQ==
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-5.0.3.tgz#92daa14f70a76d38f8b850d470d79e11e34c0408"
+  integrity sha512-JSnnY+Qfc5/airey+gXxRgfmBX7PzABH0G8+nYYfhtBdioD+mzl2X9VQCgJLiwFGnFvdZXZcGS3p91OrZEsdWQ==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
