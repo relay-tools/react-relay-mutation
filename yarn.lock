@@ -50,15 +50,15 @@
     yargs "^13.2.1"
 
 "@4c/import-sort@^4.3.4":
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/@4c/import-sort/-/import-sort-4.3.4.tgz#31ce50bc81b75226f95ea53f2dc0d81383da9621"
-  integrity sha512-T3a18a5Fx3tA+okT3yVzJzXEd6WSwWeJu8ZUhK1TIIFYfGLrjpOI6qW++057VujX5zsp5EGWL5l73zY1A55YJQ==
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/@4c/import-sort/-/import-sort-4.3.5.tgz#bdeeaa63bf01e00003a629c280e026aba77d763c"
+  integrity sha512-AmchDGrGqcqnlC6OOZXfQ3Bb6HglmxTVj7nbttPW1gBYAKbKXyg2EFsUk83VV3njidNsCFR6SttBx13gQmLCCQ==
   dependencies:
-    "@babel/core" "^7.4.0"
-    "@babel/traverse" "^7.4.0"
-    "@babel/types" "^7.4.0"
+    "@babel/core" "^7.5.5"
+    "@babel/traverse" "^7.5.5"
+    "@babel/types" "^7.5.5"
     find-line-column "^0.5.2"
-    typescript "^3.3.4000"
+    typescript "^3.5.3"
 
 "@4c/jest-preset@^1.4.2":
   version "1.4.2"
@@ -114,7 +114,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.2.2", "@babel/core@^7.4.0", "@babel/core@^7.4.5":
+"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.2.2", "@babel/core@^7.4.5", "@babel/core@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.5.5.tgz#17b2686ef0d6bc58f963dddd68ab669755582c30"
   integrity sha512-i4qoSr2KTtce0DmkuuQBV4AuQgGPUcPXMr9L5MyYAtk06z068lQ10a4O009fe5OB/DfNV+h+qqT7ddNV8UnRjg==
@@ -899,7 +899,7 @@
     "@babel/parser" "^7.4.4"
     "@babel/types" "^7.4.4"
 
-"@babel/traverse@^7.0.0", "@babel/traverse@^7.0.0-beta.54", "@babel/traverse@^7.1.0", "@babel/traverse@^7.4.0", "@babel/traverse@^7.4.3", "@babel/traverse@^7.4.4", "@babel/traverse@^7.5.5":
+"@babel/traverse@^7.0.0", "@babel/traverse@^7.0.0-beta.54", "@babel/traverse@^7.1.0", "@babel/traverse@^7.4.3", "@babel/traverse@^7.4.4", "@babel/traverse@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.5.5.tgz#f664f8f368ed32988cd648da9f72d5ca70f165bb"
   integrity sha512-MqB0782whsfffYfSjH4TM+LMjrJnhCNEDMDIjeTpl+ASaUvxcjoiVCo/sM1GhS1pHOXYfWVCYneLjMckuUxDaQ==
@@ -7464,7 +7464,7 @@ typescript-workspace-plugin@^2.0.1:
   resolved "https://registry.yarnpkg.com/typescript-workspace-plugin/-/typescript-workspace-plugin-2.0.1.tgz#3d88be1c35a7fdf2c0160c8cf569ca8993439a12"
   integrity sha512-xjIYNFlPIA7IWXvnOFJoAeHPbPJSo0AiQDCRJzaAp3+xZwz6maTgeRLB0oEHVtCqz4Q1CDN6U9kh/2z8sxdDBQ==
 
-typescript@^3.3.4000, typescript@^3.5.1:
+typescript@^3.5.1, typescript@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
   integrity sha512-ACzBtm/PhXBDId6a6sDJfroT2pOWt/oOnk4/dElG5G33ZL776N3Y6/6bKZJBFpd+b05F3Ct9qDjMeJmRWtE2/g==
