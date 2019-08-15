@@ -1,9 +1,11 @@
-sudo: false
-
 language: node_js
 node_js:
-  - '10'
-cache: yarn
+  - node
+
+cache:
+  yarn: true
+  npm: true
+
 branches:
   only:
     - master
