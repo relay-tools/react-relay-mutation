@@ -1225,11 +1225,11 @@
     "@types/node" "*"
 
 "@types/graphql-relay@^0.4.9":
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/@types/graphql-relay/-/graphql-relay-0.4.10.tgz#3a33337c348b172255ca6f87b87198447cec566e"
-  integrity sha512-4yMCHu48MIrJIBcn0dwg6XZ/bwCLsfwGXBTaCX4T0VkubgHQv8hb1MEZ3qgxPBrUDLxQm20I0yHImLlFM4WvSA==
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/@types/graphql-relay/-/graphql-relay-0.4.11.tgz#ad14834a5da61e8f70072dc639320937e44d548f"
+  integrity sha512-b/dEvz8KBsUrxRbY4kBCVbef6Fm+UhWB4G8L8SYFJEd5V/hszSPnoY+k5Pf3j6As7bXHhBlbmLyJj0aJzCKE/Q==
   dependencies:
-    graphql "14.5.0"
+    graphql "^14.5.3"
 
 "@types/graphql@^14.2.3":
   version "14.2.3"
@@ -3915,10 +3915,10 @@ graphql-relay@^0.6.0:
   dependencies:
     prettier "^1.16.0"
 
-graphql@14.5.0, graphql@^14.4.2:
-  version "14.5.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.5.0.tgz#4801e6460942c9c591944617f6dd224a9e531520"
-  integrity sha512-wnGcTD181L2xPnIwHHjx/moV4ulxA2Kms9zcUY+B/SIrK+2N+iOC6WNgnR2zVTmg1Z8P+CZq5KXibTnatg3WUw==
+graphql@^14.4.2, graphql@^14.5.3:
+  version "14.5.3"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.5.3.tgz#e025851cc413e153220f4edbbb25d49f55104fa0"
+  integrity sha512-W8A8nt9BsMg0ZK2qA3DJIVU6muWhxZRYLTmc+5XGwzWzVdUdPVlAAg5hTBjiTISEnzsKL/onasu6vl3kgGTbYg==
   dependencies:
     iterall "^1.2.2"
 
