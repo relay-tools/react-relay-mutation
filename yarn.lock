@@ -90,10 +90,10 @@
     rxjs "^6.5.2"
     semver "^5.6.0"
 
-"@4c/tsconfig@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@4c/tsconfig/-/tsconfig-0.1.2.tgz#a45fe094fd878e3ef23b5bc425df23c1144dc168"
-  integrity sha512-PfQsfgFpeuLxcqDaTPIT76HHotvY052QLIaYoYetZzCBTMqO5xKMaDnu/NOHbGdJyo+FHNzlnNjkV7vUIjNzPg==
+"@4c/tsconfig@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@4c/tsconfig/-/tsconfig-0.2.0.tgz#bcc526718f699168eb7eb844e8b682df6fe5b639"
+  integrity sha512-ZkPGKh9r/dwUy/42NHtgZd0YzkCx+3ZVuq3KqPj/pHMTdEwUWSBEz31g0iMlewvs3kmQV/J+esKnJIv4tQ178w==
   dependencies:
     typescript-workspace-plugin "^2.0.1"
 
