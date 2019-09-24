@@ -70,7 +70,7 @@
     "@restart/hooks": "^0.3.13",
     "@types/react": "^16.9.2",
     "@types/react-relay": "^5.0.0",
-    "@types/relay-runtime": "^5.0.5",
+    "@types/relay-runtime": "^6.0.0",
     "invariant": "^2.2.4"
   },
   "peerDependencies": {
