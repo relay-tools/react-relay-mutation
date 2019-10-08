@@ -2973,9 +2973,9 @@ eslint-config-4catalyzer-react@^1.0.0:
     eslint-config-airbnb "^18.0.1"
 
 eslint-config-4catalyzer-typescript@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-typescript/-/eslint-config-4catalyzer-typescript-1.0.1.tgz#af6b62d6b4c74b08efaedd21124db7f492df40ef"
-  integrity sha512-w1z53jyQMv4HvjIrpzro0ncf9KwwFEXFnz30lV++AWyW0A2Sz1P4Q4D5gybO59WZnfl3NnfelvX/HQONC0tsmg==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-typescript/-/eslint-config-4catalyzer-typescript-1.1.0.tgz#0ae2223e8812768b7c9fe4740cfec22b48138e31"
+  integrity sha512-aWMwWrAAt8Kq4i+6cD6IVIE/L9tRen5tN3UjgxpffjCZdWtAoN2YYSRuLZtKwtNyKHZM0+MDs6sy1EKf9MWjKw==
   dependencies:
     "@typescript-eslint/parser" "^2.0.0"
     babel-eslint "^10.0.2"
