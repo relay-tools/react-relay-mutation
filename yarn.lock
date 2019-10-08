@@ -52,9 +52,9 @@
     yargs "^13.2.1"
 
 "@4c/import-sort@^4.3.5":
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/@4c/import-sort/-/import-sort-4.3.5.tgz#bdeeaa63bf01e00003a629c280e026aba77d763c"
-  integrity sha512-AmchDGrGqcqnlC6OOZXfQ3Bb6HglmxTVj7nbttPW1gBYAKbKXyg2EFsUk83VV3njidNsCFR6SttBx13gQmLCCQ==
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/@4c/import-sort/-/import-sort-4.3.6.tgz#321fee97968fde8b64ab72ddd0d1b82a428729b0"
+  integrity sha512-HzuRKKViL4DCUZwUYdIKS1O9WN6aYq4zvo/73i3ltNHAEIscMV8rteTgy2Rwunabn7g2OX4iaovPqzvApVRzZQ==
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/traverse" "^7.5.5"
