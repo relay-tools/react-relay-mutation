@@ -83,7 +83,7 @@
     "@4c/import-sort": "^4.3.5",
     "@4c/jest-preset": "^1.4.3",
     "@4c/rollout": "^2.0.0",
-    "@4c/tsconfig": "^0.2.0",
+    "@4c/tsconfig": "^0.3.0",
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/preset-typescript": "^7.6.0",
