@@ -1302,9 +1302,9 @@
     csstype "^2.2.0"
 
 "@types/relay-runtime@*", "@types/relay-runtime@^6.0.0":
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-6.0.6.tgz#ca1a2ba8eaff8fcefc584afac0df68490d5b88e8"
-  integrity sha512-S2C2/BeXw22XKaz9F0rEn7bsyIhTZrtc+mFaTeK+5mGj7Sa6AD+8Vs9hOhPSe3aTbeDu2ORINz8mlrB/dehKKQ==
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-6.0.7.tgz#2c63bca39c47a4919a7e1530814b64a68c868895"
+  integrity sha512-WNJEWhJI/H1cYy8n3tvyeIVbiDFmnBiQn7c4hptWfYA/zUsERxiwTYv+H+zzRIvWTt1tWLRWeVvGcXtfZy9y7Q==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
