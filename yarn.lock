@@ -1286,9 +1286,9 @@
     "@types/react" "*"
 
 "@types/react-relay@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@types/react-relay/-/react-relay-6.0.1.tgz#f9fbe5493f86cffe0ce1cc491b3898bd1cd40cdd"
-  integrity sha512-aM0z3/7pNU/n9+pK9NKHTTTowQZ/bvQitKJX8bRpnHrApxFNhJVH1t8dqecjCz5POKIxJmIRP6k12ZaYv5YvCw==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-relay/-/react-relay-6.0.2.tgz#96accd6814987bc00c2d690f102e5737c5fb3783"
+  integrity sha512-Mr136B9p+reUsTFWu30JD8RfDIWTl5yiIAqn/l72WkTjEWwl5j/t3o7o8HGchqn1SCHC6eaJ6Dg3gvhMayfcKw==
   dependencies:
     "@types/react" "*"
     "@types/relay-runtime" "*"
