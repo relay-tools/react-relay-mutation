@@ -119,7 +119,7 @@
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-relay": "^6.0.0",
+    "react-relay": "^7.0.0",
     "relay-compiler": "^6.0.0",
     "relay-compiler-language-typescript": "^9.0.0",
     "relay-local-schema": "^0.8.0",
