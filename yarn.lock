@@ -22,13 +22,13 @@
     lodash "^4.17.15"
     read-pkg-up "^7.0.0"
 
-"@4c/cli-core@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@4c/cli-core/-/cli-core-2.0.1.tgz#8911805190ad5a87e03c8c12f16351d0086c1aa2"
-  integrity sha512-/EQN19rbbPTPz9y4GeayrHYKojAaXe+n8R2KuQBSjMSSYHRwWtogNxEcr4pKiAn4Aim4tZfozSlIHK1+4RTbjQ==
+"@4c/cli-core@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@4c/cli-core/-/cli-core-2.0.2.tgz#b15f53ab334faca1ee7753a88d92c4e366c3e891"
+  integrity sha512-1k8Zg08rzoQemFsPd0wTr8HSUVNWZG1r2m2lj9Vks942F0Q8sCly+KZ5mQrlF2Bje7Dh69pnvCTZbu1X5jFNyA==
   dependencies:
     chalk "^2.4.2"
-    execa "^2.0.4"
+    execa "^3.1.0"
     fs-extra "^8.1.0"
     globby "^10.0.1"
     inquirer "^7.0.0"
@@ -41,12 +41,12 @@
     text-table "^0.2.0"
     yargs "^14.0.0"
 
-"@4c/file-butler@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@4c/file-butler/-/file-butler-4.0.1.tgz#8a97ed09d9778bd676c7d5fcf4e32f22df4dc49b"
-  integrity sha512-6ti0ovqoXkGOQ1R0hauwh+DW5tILp/VHjVa4CxKzE0E0vA547cBQ5RrlRUxtUIzTBE2CvJ1KZHfkqOPyByjDOQ==
+"@4c/file-butler@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@4c/file-butler/-/file-butler-4.0.2.tgz#8bb8b24a10b10467d97b0463433adeaed5f7bbfb"
+  integrity sha512-sbTtUWrcv1rNrUNBhAFohL5Znz9v5MOF1ZAH2YCEVXUeKr0gRkBzIjfXxMLWduAYfOgSjhhd6H+nYzMU4bHETg==
   dependencies:
-    "@4c/cli-core" "^2.0.1"
+    "@4c/cli-core" "^2.0.2"
     cpy "^7.0.0"
     fs-extra "^8.1.0"
     globby "^10.0.1"
@@ -71,18 +71,18 @@
     babel-jest "^24.8.0"
 
 "@4c/rollout@^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@4c/rollout/-/rollout-2.0.1.tgz#d8bddce9ffaa1e9e55d5d7cafa8da79f91d600ab"
-  integrity sha512-d8CBPiWIHKyCLLmoDW0GwEhkzv16KhvZaP+iU282rZ5J1Y8qytAyugsl7AdBjiBh45y7M3pilcmhlyhFf3rBcA==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@4c/rollout/-/rollout-2.0.2.tgz#45cf120f1f3e8968cf07712a75e7723329be472f"
+  integrity sha512-La6hStSN+JfWmj9NC5f9PN1YoObBQCZ71e7QxS2UjNMGcvXCCRD/HHrxP/Jm04WNq+hNRvWz+RQb0pCW/11Yaw==
   dependencies:
-    "@4c/cli-core" "^2.0.1"
-    "@4c/file-butler" "^4.0.1"
+    "@4c/cli-core" "^2.0.2"
+    "@4c/file-butler" "^4.0.2"
     chalk "^2.4.2"
     common-tags "^1.8.0"
     conventional-changelog "^3.0.6"
     conventional-changelog-angular "^5.0.3"
     conventional-recommended-bump "^6.0.0"
-    execa "^2.0.4"
+    execa "^3.1.0"
     fs-extra "^8.1.0"
     has-yarn "^2.1.0"
     listr "^0.14.3"
@@ -2585,6 +2585,15 @@ cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
+cross-spawn@^7.0.0:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.1.tgz#0ab56286e0f7c24e153d04cc2aa027e43a9a5d14"
+  integrity sha512-u7v4o84SwFpD32Z8IIcPZ6z1/ie24O6RU3RbtL5Y316l3KuHVPx9ItBgWQ6VlfAFnRnTtMUrsQ9MUUTuEZjogg==
+  dependencies:
+    path-key "^3.1.0"
+    shebang-command "^2.0.0"
+    which "^2.0.1"
+
 css-select@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
@@ -3407,7 +3416,7 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^2.0.3, execa@^2.0.4:
+execa@^2.0.3:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/execa/-/execa-2.0.5.tgz#5be3e2ea7e61bd038da5a0e11dc6ab2097357f2f"
   integrity sha512-SwmwZZyJjflcqLSgllk4EQlMLst2p9muyzwNugKGFlpAz6rZ7M+s2nBR97GAq4Vzjwx2y9rcMcmqzojwN+xwNA==
@@ -3417,6 +3426,22 @@ execa@^2.0.3, execa@^2.0.4:
     is-stream "^2.0.0"
     merge-stream "^2.0.0"
     npm-run-path "^3.0.0"
+    onetime "^5.1.0"
+    p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
+
+execa@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-3.2.0.tgz#18326b79c7ab7fbd6610fd900c1b9e95fa48f90a"
+  integrity sha512-kJJfVbI/lZE1PZYDI5VPxp8zXPO9rtxOkhpZ0jMKha56AI9y2gGVC6bkukStQf0ka5Rh15BA5m7cCCH4jmHqkw==
+  dependencies:
+    cross-spawn "^7.0.0"
+    get-stream "^5.0.0"
+    human-signals "^1.1.1"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^4.0.0"
     onetime "^5.1.0"
     p-finally "^2.0.0"
     signal-exit "^3.0.2"
@@ -4119,6 +4144,11 @@ http-signature@~1.2.0:
     assert-plus "^1.0.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+human-signals@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
+  integrity sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
 
 husky@^3.0.5:
   version "3.0.9"
@@ -5934,6 +5964,13 @@ npm-run-path@^3.0.0:
   dependencies:
     path-key "^3.0.0"
 
+npm-run-path@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-4.0.0.tgz#d644ec1bd0569187d2a52909971023a0a58e8438"
+  integrity sha512-8eyAOAH+bYXFPSnNnKr3J+yoybe8O87Is5rtAQ8qRczJz1ajcsjg8l2oZqP+Ppx15Ii3S1vUTjQN2h4YO2tWWQ==
+  dependencies:
+    path-key "^3.0.0"
+
 npmlog@^4.0.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.1.2.tgz#08a7f2a8bf734604779a9efa4ad5cc717abb954b"
@@ -6337,7 +6374,7 @@ path-key@^2.0.0, path-key@^2.0.1:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
-path-key@^3.0.0:
+path-key@^3.0.0, path-key@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.0.tgz#99a10d870a803bdd5ee6f0470e58dfcd2f9a54d3"
   integrity sha512-8cChqz0RP6SHJkMt48FW0A7+qUOn+OsnOsVtzI59tZ8m+5bCSk7hzwET0pulwOM2YMn9J1efb07KB9l9f30SGg==
@@ -7197,10 +7234,22 @@ shebang-command@^1.2.0:
   dependencies:
     shebang-regex "^1.0.0"
 
+shebang-command@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
+  integrity sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==
+  dependencies:
+    shebang-regex "^3.0.0"
+
 shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
   integrity sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
+
+shebang-regex@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
+  integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
 shellwords@^0.1.1:
   version "0.1.1"
@@ -8021,6 +8070,13 @@ which@^1.2.9, which@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/which/-/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
   integrity sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
+  dependencies:
+    isexe "^2.0.0"
+
+which@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/which/-/which-2.0.1.tgz#f1cf94d07a8e571b6ff006aeb91d0300c47ef0a4"
+  integrity sha512-N7GBZOTswtB9lkQBZA4+zAXrjEIWAUOB93AvzUiudRzRxhUdLURQ7D/gAIMY1gatT/LTbmbcv8SiYazy3eYB7w==
   dependencies:
     isexe "^2.0.0"
 
