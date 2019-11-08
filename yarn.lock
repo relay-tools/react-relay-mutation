@@ -1313,7 +1313,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-relay@^7.0.1":
+"@types/react-relay@>=4.0.0":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@types/react-relay/-/react-relay-7.0.1.tgz#47264f24b9cd5241d69b07c9003f7e9462522163"
   integrity sha512-ZOivhaCtcwzyQDKEGfRtTCeIpBA+IZMXi0fWoa7q7auvfBsnzvLerphnwvd5yNMeJD29DG99orL23t0k+GZiBQ==
@@ -1321,7 +1321,7 @@
     "@types/react" "*"
     "@types/relay-runtime" "*"
 
-"@types/react@*", "@types/react@^16.9.11":
+"@types/react@*", "@types/react@>=16.8.0":
   version "16.9.11"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.11.tgz#70e0b7ad79058a7842f25ccf2999807076ada120"
   integrity sha512-UBT4GZ3PokTXSWmdgC/GeCGEJXE5ofWyibCcecRLUVN2ZBpXQGVgQGtG2foS7CrTKFKlQVVswLvf7Js6XA/CVQ==
@@ -1329,7 +1329,7 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/relay-runtime@*", "@types/relay-runtime@^6.0.10":
+"@types/relay-runtime@*", "@types/relay-runtime@>=4.0.0":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-6.0.10.tgz#a319aca80ae221f8296dae5144a2c97442e2e14d"
   integrity sha512-Cif2dK9d+PRK6nybibiLCKTdTrrFTjQeimgY52O4fUWfIWHRhZBfVetSWqqqZsdcG58V19mY41FzgYIgCcTj9A==

@@ -68,9 +68,9 @@
   },
   "dependencies": {
     "@restart/hooks": "^0.3.15",
-    "@types/react": "^16.9.11",
-    "@types/react-relay": "^7.0.1",
-    "@types/relay-runtime": "^6.0.10",
+    "@types/react": ">=16.8.0",
+    "@types/react-relay": ">=4.0.0",
+    "@types/relay-runtime": ">=4.0.0",
     "invariant": "^2.2.4"
   },
   "peerDependencies": {
