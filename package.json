@@ -123,7 +123,7 @@
     "relay-compiler": "^6.0.0",
     "relay-compiler-language-typescript": "^9.0.0",
     "relay-local-schema": "^0.8.0",
-    "relay-runtime": "^6.0.0",
+    "relay-runtime": "^7.1.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
   }
