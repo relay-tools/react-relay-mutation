@@ -1822,10 +1822,10 @@ babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-7.0.0-beta.0.tgz#aa213c1435e2bffeb6fca842287ef534ad05d5cf"
   integrity sha512-Xj9XuRuz3nTSbaTXWv3itLOcxyF4oPD8douBBmj7U9BBC6nEBYfyOJYQMf/8PJAFotC62UY5dFfIGEPr7WswzQ==
 
-babel-preset-fbjs@^3.1.2:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-fbjs/-/babel-preset-fbjs-3.2.0.tgz#c0e6347d3e0379ed84b3c2434d3467567aa05297"
-  integrity sha512-5Jo+JeWiVz2wHUUyAlvb/sSYnXNig9r+HqGAOSfh5Fzxp7SnAaR/tEGRJ1ZX7C77kfk82658w6R5Z+uPATTD9g==
+babel-preset-fbjs@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-fbjs/-/babel-preset-fbjs-3.3.0.tgz#a6024764ea86c8e06a22d794ca8b69534d263541"
+  integrity sha512-7QTLTCd2gwB2qGoi5epSULMHugSVgpcVt5YAeiFO9ABLrutDQzKfGwzxgZHLpugq8qMdg/DhRZDZ5CLKxBkEbw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-proposal-object-rest-spread" "^7.0.0"
@@ -5937,7 +5937,7 @@ nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
-nullthrows@^1.1.0:
+nullthrows@^1.1.0, nullthrows@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/nullthrows/-/nullthrows-1.1.1.tgz#7818258843856ae971eae4208ad7d7eb19a431b1"
   integrity sha512-2vPPEi+Z7WqML2jZYddDIfy5Dqb0r2fze2zTxNNknZaFpVHU3mFB3R+DWeJWGVx0ecvttSGlJTI+WG+8Z4cDWw==
@@ -6841,10 +6841,10 @@ relay-compiler-language-typescript@^9.0.0:
     immutable "^4.0.0-rc.12"
     invariant "^2.2.4"
 
-relay-compiler@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-6.0.0.tgz#a70ecb39b59dea507261aeda704c071326d69d5e"
-  integrity sha512-8K8cCwrOTqu3usF8GXQ+JEgxcTxJ5qVFqfNpfMYrRpMraXrBmykcLRpj38p2MxtcjyqkE2ZnUe5huW5/469obA==
+relay-compiler@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/relay-compiler/-/relay-compiler-7.1.0.tgz#cd8657c98e4d36f59bc9301ca1dc174e7f373c1a"
+  integrity sha512-8SisbLejjob1CYI9uQP7wxtsWvT+cvbx1iFDgP5U360UBukOGWLehfmn33lygY0LYqnfMShgvL1n7lrqoohs5A==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/generator" "^7.0.0"
@@ -6852,14 +6852,14 @@ relay-compiler@^6.0.0:
     "@babel/runtime" "^7.0.0"
     "@babel/traverse" "^7.0.0"
     "@babel/types" "^7.0.0"
-    babel-preset-fbjs "^3.1.2"
+    babel-preset-fbjs "^3.3.0"
     chalk "^2.4.1"
     fast-glob "^2.2.2"
     fb-watchman "^2.0.0"
     fbjs "^1.0.0"
     immutable "~3.7.6"
-    nullthrows "^1.1.0"
-    relay-runtime "6.0.0"
+    nullthrows "^1.1.1"
+    relay-runtime "7.1.0"
     signedsource "^1.0.0"
     yargs "^9.0.0"
 
@@ -6872,6 +6872,14 @@ relay-runtime@6.0.0, relay-runtime@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-6.0.0.tgz#073ec2408f41a28c3a7310d71dd5f42f8e4e4bf3"
   integrity sha512-zIXQqFfe0zBCVzKbMGEPMvKFxfbE3pY2RbZsKBvHAr/vMDj6OX9E+f4R4udE5xvMbI7g+baYFHi2I9NDEydGaQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    fbjs "^1.0.0"
+
+relay-runtime@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/relay-runtime/-/relay-runtime-7.1.0.tgz#3a1b38cb55fae7ab2fbb404f7db7a5b900ef963f"
+  integrity sha512-19WV0dC4rcbXnVBKEA4ZL41ccfJRUZ7/KKfQsgc9SwjqCi2g3+yYIR9wJ4KoC+rEfG2yN3W1vWBEqr+igH/rzA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"

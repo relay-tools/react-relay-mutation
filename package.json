@@ -120,7 +120,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-relay": "^6.0.0",
-    "relay-compiler": "^6.0.0",
+    "relay-compiler": "^7.1.0",
     "relay-compiler-language-typescript": "^9.0.0",
     "relay-local-schema": "^0.8.0",
     "relay-runtime": "^6.0.0",
