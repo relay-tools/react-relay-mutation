@@ -211,7 +211,7 @@ describe('hook', () => {
       const [mutate] = useMutation<testIndexMutation>(
         mutation,
         {
-          onError: () => {},
+          onError: jest.fn(),
         },
         environment,
       );
