@@ -51,13 +51,9 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "eslint --fix",
-      "import-sort --write",
-      "git add"
+      "import-sort --write"
     ],
-    "*.{json,css,md}": [
-      "prettier --write --ignore-path .eslintignore",
-      "git add"
-    ]
+    "*.{json,css,md}": "prettier --write --ignore-path .eslintignore"
   },
   "jest": {
     "preset": "@4c/jest-preset",
@@ -115,7 +111,7 @@
     "husky": "^4.0.7",
     "import-sort-cli": "^6.0.0",
     "jest": "^24.9.0",
-    "lint-staged": "^9.5.0",
+    "lint-staged": "^10.0.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
