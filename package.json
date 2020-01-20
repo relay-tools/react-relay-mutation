@@ -51,13 +51,9 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "eslint --fix",
-      "import-sort --write",
-      "git add"
+      "import-sort --write"
     ],
-    "*.{json,css,md}": [
-      "prettier --write --ignore-path .eslintignore",
-      "git add"
-    ]
+    "*.{json,css,md}": "prettier --write --ignore-path .eslintignore"
   },
   "jest": {
     "preset": "@4c/jest-preset",
