@@ -1327,9 +1327,9 @@
     fastq "^1.6.0"
 
 "@restart/hooks@^0.3.15":
-  version "0.3.19"
-  resolved "https://registry.yarnpkg.com/@restart/hooks/-/hooks-0.3.19.tgz#1b54b4a61dca6157f3bfcd4f348855187d67d51f"
-  integrity sha512-8bskLEkiDvuZztnfGN+vM56q2HQV8dyXS/Eb0nhXPx6fonii3hQLxfNVA2r5NTMbvEkwDo59bAau3idUXaGvww==
+  version "0.3.20"
+  resolved "https://registry.yarnpkg.com/@restart/hooks/-/hooks-0.3.20.tgz#e7179ab41e5f346b2feca091261fbdad77e8bc19"
+  integrity sha512-Q1eeEqcxHQ4oqty7C5Me8/hzWwdCRR643nR/6EHxv8BVxLVYHe4IoWAHg8MIGkE4VtSm3/JnNhkoLJhCkLx5aw==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -1514,17 +1514,17 @@
     "@types/relay-runtime" "*"
 
 "@types/react@*", "@types/react@>=16.8.0":
-  version "16.9.17"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.17.tgz#58f0cc0e9ec2425d1441dd7b623421a867aa253e"
-  integrity sha512-UP27In4fp4sWF5JgyV6pwVPAQM83Fj76JOcg02X5BZcpSu5Wx+fP9RMqc2v0ssBoQIFvD5JdKY41gjJJKmw6Bg==
+  version "16.9.19"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.19.tgz#c842aa83ea490007d29938146ff2e4d9e4360c40"
+  integrity sha512-LJV97//H+zqKWMms0kvxaKYJDG05U2TtQB3chRLF8MPNs+MQh/H1aGlyDUxjaHvu08EAGerdX2z4LTBc7ns77A==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
 "@types/relay-runtime@*", "@types/relay-runtime@>=4.0.0":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-8.0.1.tgz#0c4f675de7936aa087fdfd850fb22991af7bb1c1"
-  integrity sha512-1CtxLU8iDXA6E0nMHL2pwW63qEL8zYTO5qv6eUnQvYIbL80GWxhYfeluort3LIkKkSctiOUy06ysxPgrENoWdQ==
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-8.0.2.tgz#b93e5ce86e6830a87568fcbd6315c088a9b65e11"
+  integrity sha512-V1q1lKNwCcx8MjrtqvBfKlC+NSf/qshL453ZCp2zyZcf20X+fv2NriX7K5mf4ld7wL+9+f/lsrRlDZYIdLYvdw==
 
 "@types/schema-utils@^1.0.0":
   version "1.0.0"
