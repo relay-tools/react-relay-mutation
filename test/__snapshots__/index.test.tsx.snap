@@ -4,7 +4,7 @@ exports[`hook should fail with promises 1`] = `
 [Error: Variable "$input" of non-null type "DoStuffInput!" must not be null.
 
 GraphQL request:2:3
-1 | mutation testIndexMutation(
+1 | mutation indexTestMutation(
 2 |   $input: DoStuffInput!
   |   ^
 3 | ) {]
@@ -104,7 +104,7 @@ Array [
     [Error: Variable "$input" of non-null type "DoStuffInput!" must not be null.
 
 GraphQL request:2:3
-1 | mutation testIndexMutation(
+1 | mutation indexTestMutation(
 2 |   $input: DoStuffInput!
   |   ^
 3 | ) {],
@@ -129,7 +129,7 @@ Array [
     "error": [Error: Variable "$input" of non-null type "DoStuffInput!" must not be null.
 
 GraphQL request:2:3
-1 | mutation testIndexMutation(
+1 | mutation indexTestMutation(
 2 |   $input: DoStuffInput!
   |   ^
 3 | ) {],
