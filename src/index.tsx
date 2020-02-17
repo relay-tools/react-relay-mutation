@@ -1,3 +1,4 @@
+import useMounted from '@restart/hooks/useMounted';
 import invariant from 'invariant';
 import React, { useCallback, useContext, useState } from 'react';
 import { ReactRelayContext, commitMutation } from 'react-relay';
@@ -6,7 +7,6 @@ import {
   Environment,
   MutationParameters,
 } from 'relay-runtime';
-import useMounted from '@restart/hooks/useMounted';
 
 export type MutationState<T extends MutationParameters> = {
   loading: boolean;
