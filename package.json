@@ -16,9 +16,8 @@
     "build:fixtures": "npm run update-schema && npm run relay-compiler",
     "build:types": "tsc --emitDeclarationOnly --outDir lib && tsc --outDir es",
     "eslint": "eslint . --ext .js,.ts,.tsx",
-    "format": "yarn import-sort --write && yarn eslint && yarn prettier --write",
-    "import-sort": "import-sort '**/src/**/*.{js,ts,tsx}' '!**/__generated__/*' '!**/*.d.ts'",
-    "lint": "yarn import-sort --list-different && yarn eslint && yarn prettier --list-different && yarn typecheck",
+    "format": "yarn eslint --fix && yarn prettier --write",
+    "lint": "yarn eslint && yarn prettier --list-different && yarn typecheck",
     "prepublishOnly": "yarn run build",
     "prettier": "prettier --ignore-path .eslintignore '**/*.{json,css,md}'",
     "relay-compiler": "relay-compiler --watchman false --src test --schema test/fixtures/schema.graphql --language typescript --extensions js ts tsx",
@@ -37,22 +36,13 @@
     "singleQuote": true,
     "trailingComma": "all"
   },
-  "importSort": {
-    ".js, .ts, .tsx": {
-      "parser": "@4c/import-sort/parser-ts",
-      "style": "@4c/import-sort/style"
-    }
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix",
-      "import-sort --write"
-    ],
+    "*.{js,ts,tsx}": "eslint --fix",
     "*.{json,css,md}": "prettier --write --ignore-path .eslintignore"
   },
   "jest": {
@@ -76,7 +66,6 @@
   },
   "devDependencies": {
     "@4c/babel-preset": "^7.3.2",
-    "@4c/import-sort": "^4.3.6",
     "@4c/jest-preset": "^1.4.5",
     "@4c/rollout": "^2.1.2",
     "@4c/tsconfig": "^0.3.1",
@@ -109,7 +98,6 @@
     "graphql": "^14.6.0",
     "graphql-relay": "^0.6.0",
     "husky": "^4.2.3",
-    "import-sort-cli": "^6.0.0",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",

@@ -5,8 +5,8 @@ import { graphql } from 'react-relay';
 import { Environment } from 'relay-runtime';
 
 import { Mutation, useMutation } from '../src';
-import { createEnvironment, timeout } from './helpers';
 import { indexTestMutation } from './__generated__/indexTestMutation.graphql';
+import { createEnvironment, timeout } from './helpers';
 
 Enzyme.configure({ adapter: new Adapter() });
 
