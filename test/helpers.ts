@@ -8,7 +8,7 @@ export function createFakeFetch() {
 }
 
 export function timeout(delay: number) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, delay);
   });
 }

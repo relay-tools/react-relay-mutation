@@ -56,7 +56,7 @@ export function useMutation<T extends MutationParameters>(
   } = userConfig;
 
   const mutate: Mutate<T> = useCallback(
-    config => {
+    (config) => {
       const mergedConfig = {
         configs,
         variables,
