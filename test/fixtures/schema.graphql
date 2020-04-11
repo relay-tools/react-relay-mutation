@@ -1,6 +1,9 @@
-input DoStuffInput {
-  name: String!
-  clientMutationId: String
+type Query {
+  dummy: ID
+}
+
+type Mutation {
+  doStuff(input: DoStuffInput!): DoStuffPayload
 }
 
 type DoStuffPayload {
@@ -8,10 +11,7 @@ type DoStuffPayload {
   clientMutationId: String
 }
 
-type Mutation {
-  doStuff(input: DoStuffInput!): DoStuffPayload
-}
-
-type Query {
-  dummy: ID
+input DoStuffInput {
+  name: String!
+  clientMutationId: String
 }
