@@ -5,7 +5,7 @@ import { graphql } from 'react-relay';
 import { Environment } from 'relay-runtime';
 
 import { Mutation, useMutation } from '../src';
-import { indexTestMutation } from './__generated__/indexTestMutation.graphql';
+import { testMutation } from './__generated__/testMutation.graphql';
 import { createEnvironment, timeout } from './helpers';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -17,7 +17,7 @@ beforeEach(() => {
 });
 
 const mutation = graphql`
-  mutation indexTestMutation($input: DoStuffInput!) {
+  mutation testMutation($input: DoStuffInput!) {
     doStuff(input: $input) {
       result
     }
@@ -31,7 +31,7 @@ describe('render prop', () => {
     const onError = jest.fn();
 
     const element = shallow(
-      <Mutation<indexTestMutation>
+      <Mutation<testMutation>
         mutation={mutation}
         environment={environment}
         variables={{ input: { name: 'Mr. Foo' } }}
@@ -64,7 +64,7 @@ describe('render prop', () => {
     const renderedStates: any[] = [];
 
     const element = shallow(
-      <Mutation<indexTestMutation>
+      <Mutation<testMutation>
         mutation={mutation}
         environment={environment}
         variables={{ wrongInput: 1 } as any}
@@ -99,7 +99,7 @@ describe('hook', () => {
     const renderedStates: any[] = [];
 
     const Component = () => {
-      const [mutate, mutationState] = useMutation<indexTestMutation>(
+      const [mutate, mutationState] = useMutation<testMutation>(
         mutation,
         { onCompleted, onError },
         environment,
@@ -135,11 +135,7 @@ describe('hook', () => {
     let called = false;
 
     const Component = () => {
-      const [mutate] = useMutation<indexTestMutation>(
-        mutation,
-        {},
-        environment,
-      );
+      const [mutate] = useMutation<testMutation>(mutation, {}, environment);
 
       return (
         <button
@@ -170,11 +166,7 @@ describe('hook', () => {
     let called = false;
 
     const Component = () => {
-      const [mutate] = useMutation<indexTestMutation>(
-        mutation,
-        {},
-        environment,
-      );
+      const [mutate] = useMutation<testMutation>(mutation, {}, environment);
 
       return (
         <button
@@ -208,7 +200,7 @@ describe('hook', () => {
     let called = false;
 
     const Component = () => {
-      const [mutate] = useMutation<indexTestMutation>(
+      const [mutate] = useMutation<testMutation>(
         mutation,
         {
           onError: jest.fn(),
