@@ -1,6 +1,6 @@
 # React Relay Mutation [![Travis][build-badge]][build] [![npm][npm-badge]][npm]
 
-Higher-level [React](https://facebook.github.io/react/) mutation API for [Relay](http://facebook.github.io/relay/).
+Higher-level [React](https://reactjs.org/) mutation API for [Relay](https://relay.dev/).
 
 ## Usage
 
