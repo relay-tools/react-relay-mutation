@@ -6,6 +6,9 @@ cache:
   yarn: true
   npm: true
 
+after_script:
+  - node_modules/.bin/codecov
+
 branches:
   only:
     - master
