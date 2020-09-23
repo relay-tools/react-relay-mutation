@@ -53,7 +53,7 @@
     "invariant": "^2.2.4"
   },
   "devDependencies": {
-    "@4c/babel-preset": "^7.4.1",
+    "@4c/babel-preset": "^8.0.0",
     "@4c/jest-preset": "^1.5.3",
     "@4c/rollout": "^2.1.10",
     "@4c/tsconfig": "^0.3.1",
