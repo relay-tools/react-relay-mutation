@@ -1,6 +1,10 @@
-import useMounted from '@restart/hooks/useMounted';
-import invariant from 'invariant';
-import React, { useCallback, useContext, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { ReactRelayContext, commitMutation } from 'react-relay';
 import {
   MutationConfig as BaseMutationConfig,
@@ -40,7 +44,14 @@ export function useMutation<T extends MutationParameters>(
     error: null,
   });
 
-  const isMounted = useMounted();
+  const mounted = useRef(true);
+
+  useEffect(
+    () => () => {
+      mounted.current = false;
+    },
+    [],
+  );
 
   const relayContext = useContext(ReactRelayContext);
   const resolvedEnvironment = environment || relayContext!.environment;
@@ -69,7 +80,9 @@ export function useMutation<T extends MutationParameters>(
         ...config,
       };
 
-      invariant(mergedConfig.variables, 'you must specify variables');
+      if (!mergedConfig.variables) {
+        throw Error('you must specify variables');
+      }
 
       setState({
         loading: true,
@@ -79,7 +92,7 @@ export function useMutation<T extends MutationParameters>(
 
       return new Promise((resolve, reject) => {
         function handleError(error: any) {
-          if (isMounted()) {
+          if (mounted.current) {
             setState({
               loading: false,
               data: null,
@@ -106,7 +119,7 @@ export function useMutation<T extends MutationParameters>(
               return;
             }
 
-            if (isMounted()) {
+            if (mounted.current) {
               setState({
                 loading: false,
                 data: response,
@@ -134,7 +147,6 @@ export function useMutation<T extends MutationParameters>(
       optimisticUpdater,
       optimisticResponse,
       updater,
-      isMounted,
     ],
   );
 
