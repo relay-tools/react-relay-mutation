@@ -53,7 +53,7 @@
   "devDependencies": {
     "@4c/babel-preset": "^8.0.1",
     "@4c/jest-preset": "^1.5.3",
-    "@4c/rollout": "^2.1.11",
+    "@4c/rollout": "^3.0.1",
     "@4c/tsconfig": "^0.3.1",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
