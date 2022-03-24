@@ -46,7 +46,7 @@
     "preset": "@4c/jest-preset"
   },
   "dependencies": {
-    "@types/react": ">=16.8.0",
+    "@types/react": ">=17.0.43",
     "@types/react-relay": ">=4.0.0",
     "@types/relay-runtime": ">=4.0.0"
   },
