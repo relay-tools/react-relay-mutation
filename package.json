@@ -71,7 +71,7 @@
     "codecov": "^3.8.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
-    "eslint": "^7.13.0",
+    "eslint": "^9.2.0",
     "eslint-config-4catalyzer-jest": "^2.0.9",
     "eslint-config-4catalyzer-react": "^1.0.12",
     "eslint-config-4catalyzer-typescript": "^3.0.1",
