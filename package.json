@@ -48,7 +48,7 @@
   "dependencies": {
     "@types/react": ">=16.8.0",
     "@types/react-relay": ">=4.0.0",
-    "@types/relay-runtime": ">=4.0.0"
+    "@types/relay-runtime": ">=17.0.4"
   },
   "devDependencies": {
     "@4c/babel-preset": "^8.0.1",
