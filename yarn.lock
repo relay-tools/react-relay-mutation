@@ -1602,10 +1602,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/relay-runtime@*", "@types/relay-runtime@>=4.0.0":
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-10.0.1.tgz#0fca4e922e77a29772d325f0eb21fc461cfd7f1f"
-  integrity sha512-7JTrA3QR3rSgLVkMjFjmkUkGHKAiNZCXOX46okT+20kiuxfg6Fz/q90ukVAYTXLfbFHXWQQRZZ69HOdiR5IFGQ==
+"@types/relay-runtime@*", "@types/relay-runtime@>=19.0.3":
+  version "19.0.3"
+  resolved "https://registry.yarnpkg.com/@types/relay-runtime/-/relay-runtime-19.0.3.tgz#23d71ccc94c4e4d58d81f9dad864438086c5c549"
+  integrity sha512-pvpWWQq5e9KeESF8klQaP2igLLhr2bRd3XxVCxNpGElsPQiP6Mejr59RT9/OGY3O3i8jAGGQsshVe0QCQDbxNg==
 
 "@types/schema-utils@^2.4.0":
   version "2.4.0"
